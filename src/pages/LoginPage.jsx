@@ -50,9 +50,9 @@ export default function LoginPage() {
       setUserInfo(data)})
     }
     return (
-        <DivStyled secondary >
+        <div className="w-25 mx-auto mt-10">
             <HeadingStyled>Login page</HeadingStyled>
-            <FiLogIn  />
+           <div className="text-center"><FiLogIn  /></div> 
             <form onSubmit={handleOnSubmit} >
                 <label htmlFor="email">Email</label>
                 <InputStyled secondary
@@ -68,9 +68,9 @@ export default function LoginPage() {
                     name="password"
                     value={formData.password}
                     onChange={handleOnChange}/>
-                <ButtonStyled type="submit">Login</ButtonStyled>
+                <ButtonStyled className="w-100 mt-3" type="submit">Login</ButtonStyled>
             </form>
             
-        </DivStyled>
+        </div>
     )
 }

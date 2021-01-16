@@ -1,4 +1,4 @@
-import React, {useState,useEffect,useContext } from 'react'
+import React, {useEffect,useContext } from 'react'
 import {useHistory }from 'react-router-dom'
 import UserInformation from '../components/UserInformation'
 import { CustomerContext } from '../contexts/CustomerContext'
@@ -7,7 +7,6 @@ export default function UpdateCustomerPage(props) {
     const customerId = props.match.params.id
     const history=useHistory()
     const {customerDetail,setCustomerDetail}=useContext(CustomerContext)
-
   function getCustomerItem() {
     const url = `https://frebi.willandskill.eu/api/v1/customers/${customerId}/`
     const token = localStorage.getItem("User")
@@ -84,7 +83,7 @@ export default function UpdateCustomerPage(props) {
             {renderInput("phoneNumber", "Phone Number", "tel")} 
         </tbody>
         </TableStyled>
-        <ButtonStyled secondary type="submit">Update Customer</ButtonStyled>
+        <ButtonStyled className="mx-auto" type="submit">Update Customer</ButtonStyled>
         
       </form>
 

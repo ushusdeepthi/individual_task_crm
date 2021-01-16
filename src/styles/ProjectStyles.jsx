@@ -6,8 +6,12 @@ const ButtonStyled=styled.button`
     border-radius: 5px;
     background-color:#4a77d4;
     display:block;
+`
+const DeleteButton=styled(ButtonStyled)`
+    border-color:red;
     &:hover{
-        background-color: ${props => props.primary ? "red":"#4a77d4"  };
+        border-color:black;
+        background:red;
     }
     
 `
@@ -21,18 +25,10 @@ const InputStyled=styled.input`
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
     border: 1px solid rgba(0,0,0,0.3);
-    border-radius: 5px;
-    
-`
-const LabelStyled=styled.label`
-width:25%`
-const DivStyled=styled.div`
-  margin:100px auto;
-  /* margin: -150px 0 0 -150px; */
-  width: ${props => props.secondary ? "300px":"750px"  }; 
+    border-radius: 5px;   
 `
 const HeadingStyled=styled.h2`
-    color: #fff; 
+    color: purple; 
     text-shadow: 0 0 10px rgba(0,0,0,0.3); 
     letter-spacing:1px; 
     text-align:center;
@@ -55,28 +51,6 @@ tbody tr td {
   
 }
 
-tbody tr:nth-child(2n) {
-  background:#f0f3f5;
-}
 
-tbody tr:last-child td {
-  border-bottom:none;
-  &:first-child {
-   border-radius:5px;
-  }
-  &:last-child {
-    border-radius:5px;
-  }
-}
-
-tbody:hover > tr td {
-  opacity:0.5;
-}
-
-tbody:hover > tr:hover td {
- text-shadow:none;
-  color:#2d2d2d;
- opacity:1.0;
-}
 `
-export {ButtonStyled,InputStyled,DivStyled,HeadingStyled,LabelStyled, TableStyled}
+export {ButtonStyled,DeleteButton,InputStyled,HeadingStyled,TableStyled}

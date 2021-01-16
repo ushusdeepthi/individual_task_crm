@@ -9,7 +9,6 @@ export function CustomerProvider({children}){
   const [customerDetail,setCustomerDetail]=useState({})
   const [customerItem, setCustomerItem] = useState(null)
   const history=useHistory()
-  
     const getItem=(()=>{
       const url = "https://frebi.willandskill.eu/api/v1/customers/"
       const token=localStorage.getItem("User")
