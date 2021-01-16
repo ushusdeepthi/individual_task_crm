@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import { Switch,Route } from 'react-router-dom'
+import CreateCustomerPage from './pages/CreateCustomerPage'
+import CustomerDetailPage from './pages/CustomerDetailPage'
+import CustomerListPage from './pages/CustomerListPage'
+import LoginPage from './pages/LoginPage'
+import UpdateCustomerPage from './pages/UpdateCustomerPage'
+import { CustomerProvider } from './contexts/CustomerContext'
 
-function App() {
+export default function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>  
+    <CustomerProvider>
+      <Switch>  
+          <Route path="/customers/:id/edit" component={UpdateCustomerPage} />
+          <Route path="/customers/:id" component={CustomerDetailPage} />  
+          <Route path="/customers">
+            <CustomerListPage />
+          </Route>
+          <Route path="/create">
+            <CreateCustomerPage />
+          </Route>  
+        <Route path="/">
+          <LoginPage />
+        </Route>  
+      </Switch>
+      </CustomerProvider>
     </div>
-  );
+  )
 }
-
-export default App;
