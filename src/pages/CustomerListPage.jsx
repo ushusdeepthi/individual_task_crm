@@ -9,6 +9,7 @@ export default function CustomerListPage() {
     const {customerList,getItem}=useContext(CustomerContext)  
     useEffect(()=>{
         getItem()
+        console.log("hello. How are you there!!!")
     },[])
     return (
        <>

@@ -41,7 +41,9 @@ export default function CreateCustomerPage() {
       .then( res => res.json())
       .then( data => {
         setCustomerList([...customerList,data])
-        getItem()
+        // getItem()
+        //context variable updated here but not required?
+         //push to /customers fetches data again within useEffect and thus updates page from backend
           history.push('/customers')
       })
     }
