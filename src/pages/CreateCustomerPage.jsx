@@ -26,8 +26,8 @@ export default function CreateCustomerPage() {
     })
     const handleOnSubmit= ((e)=>{
       e.preventDefault()
-    
-      if(validateVat()===true){
+      console.log(e.target.vatNr.value)
+      if(validateVat(e.target.vatNr.value)===true){
       const url = "https://frebi.willandskill.eu/api/v1/customers/"
       const token=localStorage.getItem("User")
       fetch(url, {
@@ -49,8 +49,8 @@ export default function CreateCustomerPage() {
     }
   
     })
-    function validateVat(){
-      let vatNr=document.getElementById("vatNr").value.trim()
+    function validateVat(value){
+      let vatNr=value.trim()
       let letters=vatNr.slice(0,2)
       let digits=vatNr.slice(2,13)
       if(letters=="SE" && digits.length===10 && !isNaN(digits)) return true
@@ -64,20 +64,18 @@ export default function CreateCustomerPage() {
       <UserInformation />
       <HeadingStyled >Let's create a new customer</HeadingStyled>
         <div className="container">
-          {/* <div className="row "> */}
-            <form className="row" onSubmit={handleOnSubmit}>
-                {renderInput("name", "Customer Name")}
-                {renderInput("organisationNr", "Organisation Number")}
-                {renderInput("vatNr", "Vat Number")}
-                {renderInput("reference", "Reference")}
-                {renderInput("paymentTerm", "Payment Term", "number")}
-                {renderInput("website", "Website", "url")}
-                {renderInput("email", "Customer Email", "email")}
-                {renderInput("phoneNumber", "Phone Number", "tel")}   
-                <ButtonStyled className="col-md-6 m-5" type="submit">Create Customer</ButtonStyled>
-            </form>
-          {/* </div> */}
-            <code>{JSON.stringify(createCustomer)}</code>
+          <form className="row" onSubmit={handleOnSubmit}>
+              {renderInput("name", "Customer Name")}
+              {renderInput("organisationNr", "Organisation Number")}
+              {renderInput("vatNr", "Vat Number")}
+              {renderInput("reference", "Reference")}
+              {renderInput("paymentTerm", "Payment Term", "number")}
+              {renderInput("website", "Website", "url")}
+              {renderInput("email", "Customer Email", "email")}
+              {renderInput("phoneNumber", "Phone Number", "tel")}   
+              <ButtonStyled className="col-md-6 m-5" type="submit">Create Customer</ButtonStyled>
+          </form>
+          <code>{JSON.stringify(createCustomer)}</code>
         </div>
         </>
     )
