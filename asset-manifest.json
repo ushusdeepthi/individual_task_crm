@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/individual_task_crm/static/css/main.4a4137e4.chunk.css",
+    "main.js": "/individual_task_crm/static/js/main.7573af43.chunk.js",
+    "main.js.map": "/individual_task_crm/static/js/main.7573af43.chunk.js.map",
+    "runtime-main.js": "/individual_task_crm/static/js/runtime-main.4988918f.js",
+    "runtime-main.js.map": "/individual_task_crm/static/js/runtime-main.4988918f.js.map",
+    "static/css/2.1f208231.chunk.css": "/individual_task_crm/static/css/2.1f208231.chunk.css",
+    "static/js/2.92970e94.chunk.js": "/individual_task_crm/static/js/2.92970e94.chunk.js",
+    "static/js/2.92970e94.chunk.js.map": "/individual_task_crm/static/js/2.92970e94.chunk.js.map",
+    "index.html": "/individual_task_crm/index.html",
+    "static/css/2.1f208231.chunk.css.map": "/individual_task_crm/static/css/2.1f208231.chunk.css.map",
+    "static/css/main.4a4137e4.chunk.css.map": "/individual_task_crm/static/css/main.4a4137e4.chunk.css.map",
+    "static/js/2.92970e94.chunk.js.LICENSE.txt": "/individual_task_crm/static/js/2.92970e94.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4988918f.js",
+    "static/css/2.1f208231.chunk.css",
+    "static/js/2.92970e94.chunk.js",
+    "static/css/main.4a4137e4.chunk.css",
+    "static/js/main.7573af43.chunk.js"
+  ]
+}
